@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Meal Tracker — NutriBharat{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+  <!-- Daily Summary Banner -->
+  <div class="daily-banner" id="daily-banner">
+    <div>
+      <div class="banner-title">Today's Summary</div>
+      <div class="banner-date" id="today-date">—</div>
+    </div>
+    <div class="banner-stats">
+      <div class="banner-stat">
+        <div class="val" id="banner-cal">0</div>
+        <div class="lbl">kcal</div>
+      </div>
+      <div class="banner-stat">
+        <div class="val" id="banner-prot">0g</div>
+        <div class="lbl">Protein</div>
+      </div>
+      <div class="banner-stat">
+        <div class="val" id="banner-carb">0g</div>
+        <div class="lbl">Carbs</div>
+      </div>
+      <div class="banner-stat">
+        <div class="val" id="banner-fat">0g</div>
+        <div class="lbl">Fat</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <a href="/food/upload" class="btn btn-secondary" style="background:rgba(255,255,255,0.2);color:white;border-color:rgba(255,255,255,0.3);">
+        📷 Add via Photo
+      </a>
+      <a href="/food/search-page" class="btn btn-secondary" style="background:rgba(255,255,255,0.2);color:white;border-color:rgba(255,255,255,0.3);">
+        🔍 Add via Search
+      </a>
+    </div>
+  </div>
+
+  <!-- Meal Sections -->
+  <div id="meals-container">
+    <!-- Skeleton loaders -->
+    <div class="skeleton" style="height:72px;border-radius:var(--radius-lg);margin-bottom:12px;"></div>
+    <div class="skeleton" style="height:72px;border-radius:var(--radius-lg);margin-bottom:12px;"></div>
+    <div class="skeleton" style="height:72px;border-radius:var(--radius-lg);margin-bottom:12px;"></div>
+    <div class="skeleton" style="height:72px;border-radius:var(--radius-lg);margin-bottom:12px;"></div>
+  </div>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="hidden" style="text-align:center;padding:60px 20px;">
+    <div style="font-size:4rem;margin-bottom:20px;">🍽️</div>
+    <h2 style="font-size:1.2rem;font-weight:600;margin-bottom:8px;">No meals logged yet</h2>
+    <p style="color:var(--text-2);font-size:0.875rem;margin-bottom:24px;">Start tracking your nutrition by adding your first meal.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="/food/upload" class="btn btn-primary">📷 Upload Food Photo</a>
+      <a href="/food/search-page" class="btn btn-outline">🔍 Search Foods</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/tracker.js') }}"></script>
+{% endblock %}

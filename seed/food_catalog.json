@@ -1,0 +1,87 @@
+[
+  {"name": "Idli", "calories": 39, "protein": 2.0, "carbs": 7.5, "fat": 0.4, "category": "South Indian", "serving": 40, "unit": "piece", "tags": ["idli", "rice cake", "steamed"]},
+  {"name": "Masala Dosa", "calories": 168, "protein": 3.5, "carbs": 28, "fat": 5.5, "category": "South Indian", "serving": 100, "unit": "piece", "tags": ["dosa", "crepe", "fermented"]},
+  {"name": "Plain Dosa", "calories": 133, "protein": 3.4, "carbs": 25, "fat": 2.2, "category": "South Indian", "serving": 80, "unit": "piece", "tags": ["dosa", "crepe"]},
+  {"name": "Uttapam", "calories": 107, "protein": 3.0, "carbs": 19, "fat": 2.5, "category": "South Indian", "serving": 90, "unit": "piece", "tags": ["uttapam", "pancake"]},
+  {"name": "Sambar", "calories": 44, "protein": 2.5, "carbs": 6.5, "fat": 1.0, "category": "South Indian", "serving": 150, "unit": "bowl", "tags": ["sambar", "lentil", "soup"]},
+  {"name": "Coconut Chutney", "calories": 120, "protein": 1.5, "carbs": 5.0, "fat": 11, "category": "Condiment", "serving": 30, "unit": "tbsp", "tags": ["chutney", "coconut"]},
+  {"name": "Vada", "calories": 97, "protein": 3.5, "carbs": 14, "fat": 3.5, "category": "South Indian", "serving": 50, "unit": "piece", "tags": ["vada", "medu vada", "donut"]},
+
+  {"name": "Dal Makhani", "calories": 122, "protein": 5.5, "carbs": 15, "fat": 5.0, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["dal", "lentil", "makhani", "creamy"]},
+  {"name": "Yellow Dal Tadka", "calories": 90, "protein": 5.0, "carbs": 13, "fat": 2.5, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["dal", "tadka", "lentil"]},
+  {"name": "Chana Masala", "calories": 164, "protein": 8.5, "carbs": 25, "fat": 4.0, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["chana", "chickpea", "masala"]},
+  {"name": "Rajma", "calories": 144, "protein": 8.7, "carbs": 22, "fat": 2.5, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["rajma", "kidney beans"]},
+  {"name": "Palak Paneer", "calories": 161, "protein": 7.0, "carbs": 8.0, "fat": 12, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["palak", "spinach", "paneer", "cottage cheese"]},
+  {"name": "Paneer Butter Masala", "calories": 200, "protein": 8.5, "carbs": 10, "fat": 15, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["paneer", "butter", "masala", "makhani"]},
+  {"name": "Aloo Matar", "calories": 110, "protein": 3.5, "carbs": 18, "fat": 3.5, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["aloo", "potato", "matar", "peas"]},
+  {"name": "Baingan Bharta", "calories": 80, "protein": 2.5, "carbs": 10, "fat": 4.0, "category": "North Indian", "serving": 130, "unit": "bowl", "tags": ["baingan", "eggplant", "brinjal", "bharta"]},
+  {"name": "Matar Paneer", "calories": 175, "protein": 8.0, "carbs": 12, "fat": 12, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["matar","peas","paneer","cottage cheese"]},
+  {"name": "Mix Veg Curry", "calories": 95, "protein": 3.0, "carbs": 12, "fat": 4.5, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["vegetables", "curry", "mix"]},
+  {"name": "Kadai Paneer", "calories": 210, "protein": 9.0, "carbs": 9.0, "fat": 16, "category": "North Indian", "serving": 150, "unit": "bowl", "tags": ["kadai","paneer","peppers"]},
+
+  {"name": "Roti (Chapati)", "calories": 71, "protein": 2.7, "carbs": 14.5, "fat": 0.8, "category": "Bread", "serving": 30, "unit": "piece", "tags": ["roti", "chapati", "wheat", "flatbread"]},
+  {"name": "Paratha", "calories": 126, "protein": 3.0, "carbs": 18, "fat": 5.0, "category": "Bread", "serving": 60, "unit": "piece", "tags": ["paratha", "flatbread", "wheat"]},
+  {"name": "Aloo Paratha", "calories": 168, "protein": 4.0, "carbs": 27, "fat": 5.5, "category": "Bread", "serving": 100, "unit": "piece", "tags": ["aloo paratha", "stuffed paratha", "potato"]},
+  {"name": "Puri", "calories": 140, "protein": 2.5, "carbs": 18, "fat": 7.0, "category": "Bread", "serving": 40, "unit": "piece", "tags": ["puri", "puri", "fried bread"]},
+  {"name": "Naan", "calories": 262, "protein": 8.7, "carbs": 45, "fat": 5.1, "category": "Bread", "serving": 90, "unit": "piece", "tags": ["naan", "bread", "tandoor"]},
+  {"name": "Bhatura", "calories": 275, "protein": 6.5, "carbs": 42, "fat": 9.0, "category": "Bread", "serving": 100, "unit": "piece", "tags": ["bhatura", "fried bread"]},
+
+  {"name": "Steamed Rice", "calories": 130, "protein": 2.7, "carbs": 28, "fat": 0.3, "category": "Rice", "serving": 150, "unit": "bowl", "tags": ["rice", "steamed", "plain rice"]},
+  {"name": "Jeera Rice", "calories": 148, "protein": 2.9, "carbs": 28, "fat": 3.0, "category": "Rice", "serving": 150, "unit": "bowl", "tags": ["jeera rice", "cumin rice"]},
+  {"name": "Chicken Biryani", "calories": 250, "protein": 15, "carbs": 32, "fat": 7.0, "category": "Rice", "serving": 250, "unit": "plate", "tags": ["biryani", "chicken", "rice"]},
+  {"name": "Veg Biryani", "calories": 180, "protein": 5.0, "carbs": 35, "fat": 4.0, "category": "Rice", "serving": 250, "unit": "plate", "tags": ["biryani", "vegetable", "rice"]},
+  {"name": "Mutton Biryani", "calories": 290, "protein": 17, "carbs": 30, "fat": 10, "category": "Rice", "serving": 250, "unit": "plate", "tags": ["biryani", "mutton", "rice"]},
+  {"name": "Pulao", "calories": 160, "protein": 3.5, "carbs": 30, "fat": 3.5, "category": "Rice", "serving": 150, "unit": "bowl", "tags": ["pulao", "pilaf", "rice"]},
+  {"name": "Khichdi", "calories": 115, "protein": 4.5, "carbs": 21, "fat": 2.0, "category": "Rice", "serving": 200, "unit": "bowl", "tags": ["khichdi", "rice", "dal", "lentil"]},
+
+  {"name": "Chicken Tikka Masala", "calories": 165, "protein": 15, "carbs": 8.0, "fat": 9.0, "category": "Non-Veg", "serving": 150, "unit": "bowl", "tags": ["chicken", "tikka", "masala", "curry"]},
+  {"name": "Butter Chicken", "calories": 175, "protein": 14, "carbs": 9.0, "fat": 10, "category": "Non-Veg", "serving": 150, "unit": "bowl", "tags": ["butter chicken", "murgh makhani", "chicken"]},
+  {"name": "Chicken Curry", "calories": 155, "protein": 16, "carbs": 6.0, "fat": 8.0, "category": "Non-Veg", "serving": 150, "unit": "bowl", "tags": ["chicken", "curry"]},
+  {"name": "Fish Curry", "calories": 120, "protein": 14, "carbs": 5.0, "fat": 5.5, "category": "Non-Veg", "serving": 150, "unit": "bowl", "tags": ["fish", "curry", "seafood"]},
+  {"name": "Egg Curry", "calories": 130, "protein": 8.5, "carbs": 7.0, "fat": 8.5, "category": "Non-Veg", "serving": 150, "unit": "bowl", "tags": ["egg", "curry", "anda"]},
+  {"name": "Tandoori Chicken", "calories": 180, "protein": 25, "carbs": 4.0, "fat": 8.0, "category": "Non-Veg", "serving": 150, "unit": "portion", "tags": ["tandoori", "chicken", "grilled"]},
+  {"name": "Mutton Rogan Josh", "calories": 200, "protein": 18, "carbs": 5.0, "fat": 13, "category": "Non-Veg", "serving": 150, "unit": "bowl", "tags": ["mutton", "rogan josh", "lamb"]},
+
+  {"name": "Samosa", "calories": 262, "protein": 4.5, "carbs": 30, "fat": 14, "category": "Snacks", "serving": 80, "unit": "piece", "tags": ["samosa", "fried", "snack"]},
+  {"name": "Pakora", "calories": 285, "protein": 5.5, "carbs": 28, "fat": 17, "category": "Snacks", "serving": 100, "unit": "portion", "tags": ["pakora", "bhajia", "fritter", "fried"]},
+  {"name": "Bhel Puri", "calories": 180, "protein": 4.5, "carbs": 32, "fat": 5.0, "category": "Snacks", "serving": 150, "unit": "plate", "tags": ["bhel", "puri", "chaat", "street food"]},
+  {"name": "Pani Puri", "calories": 250, "protein": 5.0, "carbs": 42, "fat": 7.0, "category": "Snacks", "serving": 6, "unit": "pieces", "tags": ["pani puri", "golgappa", "chaat", "street food"]},
+  {"name": "Aloo Tikki", "calories": 200, "protein": 3.5, "carbs": 30, "fat": 8.0, "category": "Snacks", "serving": 100, "unit": "piece", "tags": ["aloo tikki", "potato patty", "snack"]},
+  {"name": "Dahi Vada", "calories": 155, "protein": 6.5, "carbs": 22, "fat": 5.5, "category": "Snacks", "serving": 120, "unit": "portion", "tags": ["dahi vada", "lentil", "yogurt"]},
+  {"name": "Poha", "calories": 130, "protein": 2.5, "carbs": 25, "fat": 3.5, "category": "Breakfast", "serving": 150, "unit": "bowl", "tags": ["poha", "flattened rice", "breakfast"]},
+  {"name": "Upma", "calories": 126, "protein": 3.0, "carbs": 22, "fat": 3.8, "category": "Breakfast", "serving": 150, "unit": "bowl", "tags": ["upma", "semolina", "breakfast"]},
+
+  {"name": "Raita", "calories": 60, "protein": 3.5, "carbs": 6.0, "fat": 2.5, "category": "Condiment", "serving": 100, "unit": "bowl", "tags": ["raita", "yogurt", "curd"]},
+  {"name": "Lassi (Sweet)", "calories": 150, "protein": 5.0, "carbs": 22, "fat": 4.5, "category": "Beverage", "serving": 250, "unit": "glass", "tags": ["lassi", "yogurt", "drink", "sweet"]},
+  {"name": "Masala Chai", "calories": 45, "protein": 1.5, "carbs": 7.0, "fat": 1.5, "category": "Beverage", "serving": 150, "unit": "cup", "tags": ["chai", "tea", "masala", "spiced"]},
+  {"name": "Mango Lassi", "calories": 178, "protein": 4.5, "carbs": 30, "fat": 4.5, "category": "Beverage", "serving": 250, "unit": "glass", "tags": ["lassi", "mango", "yogurt", "drink"]},
+
+  {"name": "Gulab Jamun", "calories": 356, "protein": 4.5, "carbs": 55, "fat": 13, "category": "Dessert", "serving": 60, "unit": "piece", "tags": ["gulab jamun", "sweet", "dessert"]},
+  {"name": "Rasgulla", "calories": 186, "protein": 4.0, "carbs": 35, "fat": 3.8, "category": "Dessert", "serving": 80, "unit": "piece", "tags": ["rasgulla", "sweet", "dessert"]},
+  {"name": "Kheer", "calories": 160, "protein": 4.5, "carbs": 26, "fat": 5.0, "category": "Dessert", "serving": 150, "unit": "bowl", "tags": ["kheer", "rice pudding", "dessert"]},
+  {"name": "Halwa", "calories": 280, "protein": 3.0, "carbs": 40, "fat": 12, "category": "Dessert", "serving": 100, "unit": "portion", "tags": ["halwa", "sweet", "dessert"]},
+  {"name": "Jalebi", "calories": 381, "protein": 1.5, "carbs": 70, "fat": 10, "category": "Dessert", "serving": 60, "unit": "portion", "tags": ["jalebi", "sweet", "dessert", "fried"]},
+  {"name": "Barfi", "calories": 370, "protein": 6.5, "carbs": 55, "fat": 14, "category": "Dessert", "serving": 50, "unit": "piece", "tags": ["barfi", "sweet", "dairy", "dessert"]},
+
+  {"name": "Chole Bhature", "calories": 550, "protein": 15, "carbs": 80, "fat": 18, "category": "North Indian", "serving": 300, "unit": "plate", "tags": ["chole", "bhature", "chickpea", "fried bread"]},
+  {"name": "Pav Bhaji", "calories": 420, "protein": 10, "carbs": 65, "fat": 14, "category": "Street Food", "serving": 300, "unit": "plate", "tags": ["pav bhaji", "pav", "bhaji", "street food", "vegetable"]},
+  {"name": "Vada Pav", "calories": 290, "protein": 6.5, "carbs": 44, "fat": 10, "category": "Street Food", "serving": 150, "unit": "piece", "tags": ["vada pav", "potato", "bun", "street food"]},
+  {"name": "Dabeli", "calories": 255, "protein": 5.5, "carbs": 40, "fat": 8.5, "category": "Street Food", "serving": 120, "unit": "piece", "tags": ["dabeli", "street food", "potato"]},
+
+  {"name": "Dhokla", "calories": 160, "protein": 5.5, "carbs": 27, "fat": 4.0, "category": "Gujarat", "serving": 100, "unit": "portion", "tags": ["dhokla", "steamed", "fermented", "gujarati"]},
+  {"name": "Thepla", "calories": 155, "protein": 4.0, "carbs": 22, "fat": 6.0, "category": "Gujarat", "serving": 60, "unit": "piece", "tags": ["thepla", "flatbread", "gujarati"]},
+  {"name": "Khandvi", "calories": 152, "protein": 5.5, "carbs": 18, "fat": 7.0, "category": "Gujarat", "serving": 100, "unit": "portion", "tags": ["khandvi", "gujarati", "gram flour"]},
+
+  {"name": "Pongal", "calories": 140, "protein": 4.5, "carbs": 25, "fat": 3.5, "category": "South Indian", "serving": 200, "unit": "bowl", "tags": ["pongal", "rice", "lentil", "breakfast"]},
+  {"name": "Rasam", "calories": 35, "protein": 1.5, "carbs": 6.0, "fat": 0.8, "category": "South Indian", "serving": 150, "unit": "bowl", "tags": ["rasam", "soup", "tomato", "tamarind"]},
+  {"name": "Aviyal", "calories": 90, "protein": 2.5, "carbs": 10, "fat": 5.5, "category": "South Indian", "serving": 130, "unit": "bowl", "tags": ["aviyal", "vegetable curry", "coconut", "Kerala"]},
+
+  {"name": "Dal Baati Churma", "calories": 480, "protein": 14, "carbs": 68, "fat": 18, "category": "Rajasthani", "serving": 300, "unit": "plate", "tags": ["dal baati", "baati", "churma", "rajasthani"]},
+  {"name": "Laal Maas", "calories": 240, "protein": 22, "carbs": 8.0, "fat": 15, "category": "Rajasthani", "serving": 180, "unit": "bowl", "tags": ["laal maas", "mutton", "rajasthani", "spicy"]},
+
+  {"name": "Appam", "calories": 120, "protein": 2.8, "carbs": 24, "fat": 1.5, "category": "South Indian", "serving": 80, "unit": "piece", "tags": ["appam", "rice", "coconut", "Kerala"]},
+  {"name": "Fish Molee", "calories": 155, "protein": 16, "carbs": 5.0, "fat": 8.5, "category": "South Indian", "serving": 150, "unit": "bowl", "tags": ["fish molee", "fish", "coconut milk", "Kerala"]},
+
+  {"name": "Pea Pulao", "calories": 172, "protein": 4.0, "carbs": 32, "fat": 3.8, "category": "Rice", "serving": 200, "unit": "bowl", "tags": ["pulao", "peas", "matar", "rice"]},
+  {"name": "Egg Bhurji", "calories": 148, "protein": 10, "carbs": 3.5, "fat": 11, "category": "Breakfast", "serving": 100, "unit": "portion", "tags": ["egg bhurji", "scrambled egg", "spiced"]}
+]

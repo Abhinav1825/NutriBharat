@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — NutriBharat{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+  <div class="page-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <div>
+      <h1>📊 Nutrition Dashboard</h1>
+      <p>Your daily and weekly nutrition overview.</p>
+    </div>
+    <a href="/dashboard/export?days=7" class="btn btn-secondary btn-sm" id="btn-export" download>
+      ⬇️ Export CSV (7 days)
+    </a>
+  </div>
+
+  <!-- Stat Cards →4-col grid -->
+  <div class="grid-4" style="margin-bottom:24px;">
+    <div class="stat-card calories">
+      <div class="stat-label">Calories Today</div>
+      <div>
+        <span class="stat-value" id="stat-cal">—</span>
+        <span class="stat-unit"> kcal</span>
+      </div>
+      <div class="stat-goal" id="goal-cal">Goal: 2000 kcal</div>
+      <div class="stat-progress"><div class="stat-progress-bar" id="prog-cal" style="width:0%;"></div></div>
+    </div>
+    <div class="stat-card protein">
+      <div class="stat-label">Protein</div>
+      <div>
+        <span class="stat-value" id="stat-prot">—</span>
+        <span class="stat-unit"> g</span>
+      </div>
+      <div class="stat-goal" id="goal-prot">Goal: 50g</div>
+      <div class="stat-progress"><div class="stat-progress-bar" id="prog-prot" style="width:0%;"></div></div>
+    </div>
+    <div class="stat-card carbs">
+      <div class="stat-label">Carbohydrates</div>
+      <div>
+        <span class="stat-value" id="stat-carb">—</span>
+        <span class="stat-unit"> g</span>
+      </div>
+      <div class="stat-goal" id="goal-carb">Goal: 300g</div>
+      <div class="stat-progress"><div class="stat-progress-bar" id="prog-carb" style="width:0%;"></div></div>
+    </div>
+    <div class="stat-card fat">
+      <div class="stat-label">Fat</div>
+      <div>
+        <span class="stat-value" id="stat-fat">—</span>
+        <span class="stat-unit"> g</span>
+      </div>
+      <div class="stat-goal" id="goal-fat">Goal: 65g</div>
+      <div class="stat-progress"><div class="stat-progress-bar" id="prog-fat" style="width:0%;"></div></div>
+    </div>
+  </div>
+
+  <!-- Charts Row 1: Donut + Trend -->
+  <div class="grid-2" style="margin-bottom:20px;">
+    <div class="chart-card">
+      <h3>🥗 Macronutrient Breakdown</h3>
+      <p class="chart-subtitle">Today's calorie distribution by macro</p>
+      <div class="chart-wrapper">
+        <canvas id="chart-macro" aria-label="Macronutrient donut chart"></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>📈 7-Day Calorie Trend</h3>
+      <p class="chart-subtitle">Daily calories over the past week</p>
+      <div class="chart-wrapper">
+        <canvas id="chart-trend" aria-label="7-day calorie trend bar chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Row 2: Meal distribution -->
+  <div class="chart-card" style="margin-bottom:20px;">
+    <h3>🍽️ Meal Distribution</h3>
+    <p class="chart-subtitle">Today's calories by meal type</p>
+    <div class="chart-wrapper" style="height:200px;">
+      <canvas id="chart-meals" aria-label="Meal distribution bar chart"></canvas>
+    </div>
+  </div>
+
+  <!-- Empty state for dashboard -->
+  <div id="dashboard-empty" class="hidden" style="text-align:center;padding:48px 20px;">
+    <div style="font-size:3.5rem;margin-bottom:16px;">📊</div>
+    <h2 style="font-size:1.1rem;font-weight:600;margin-bottom:8px;">No data yet</h2>
+    <p style="color:var(--text-2);font-size:0.875rem;margin-bottom:20px;">Log some meals first to see your analytics here.</p>
+    <a href="/food/search-page" class="btn btn-primary">+ Log Your First Meal</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

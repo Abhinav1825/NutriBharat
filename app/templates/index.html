@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to Indian Food Nutrition Estimator — Track calories and macros for Indian foods." />
+  <title>Sign In — NutriBharat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>" />
+</head>
+<body id="app-body">
+
+<div class="login-page">
+  <div class="login-card fade-in">
+    <div class="login-logo" aria-hidden="true">🍛</div>
+    <h1>NutriBharat</h1>
+    <p class="login-subtitle">Your Indian Food Nutrition Companion</p>
+
+    <div class="login-features">
+      <div class="login-feature">
+        <div class="feat-icon">📷</div>
+        <span>AI food recognition from photos</span>
+      </div>
+      <div class="login-feature">
+        <div class="feat-icon" style="background:var(--green-light);">📊</div>
+        <span>Track macros for 80+ Indian dishes</span>
+      </div>
+      <div class="login-feature">
+        <div class="feat-icon" style="background:var(--blue-light);">📋</div>
+        <span>Daily meal log & nutrition analytics</span>
+      </div>
+    </div>
+
+    <form id="login-form" autocomplete="off">
+      <div class="form-group">
+        <label class="form-label" for="username-input">Your Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username-input"
+          name="username"
+          placeholder="e.g. Priya, Rahul..."
+          maxlength="30"
+          required
+          autofocus
+        />
+        <p id="username-error" class="text-xs text-muted mt-1" style="color:var(--red);display:none;"></p>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full btn-lg" id="login-btn">
+        <span id="login-btn-text">Start Tracking →</span>
+        <span id="login-spinner" class="spinner hidden"></span>
+      </button>
+    </form>
+
+    <p class="text-center text-xs text-muted mt-2" style="margin-top: 20px;">
+      No registration needed. Just enter your name to start.
+    </p>
+
+    <div style="margin-top:24px; text-align:center;">
+      <button class="btn-icon" id="theme-toggle-login" title="Toggle dark mode" style="margin:0 auto;">
+        <span id="theme-icon-login">🌙</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+  document.getElementById('login-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username-input').value.trim();
+    const errEl = document.getElementById('username-error');
+    const btn = document.getElementById('login-btn');
+    const spinner = document.getElementById('login-spinner');
+    const btnText = document.getElementById('login-btn-text');
+
+    errEl.style.display = 'none';
+    if (!username || username.length < 2) {
+      errEl.textContent = 'Name must be at least 2 characters.';
+      errEl.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    spinner.classList.remove('hidden');
+    btnText.textContent = 'Signing in...';
+
+    try {
+      const res = await fetch('/auth/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username})
+      });
+      const data = await res.json();
+      if (data.success) {
+        showToast('Welcome, ' + data.user.display_name + '! 🎉', 'success');
+        setTimeout(() => window.location.href = data.redirect, 600);
+      } else {
+        errEl.textContent = data.error || 'Login failed.';
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        spinner.classList.add('hidden');
+        btnText.textContent = 'Start Tracking →';
+      }
+    } catch(err) {
+      errEl.textContent = 'Connection error. Please try again.';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      spinner.classList.add('hidden');
+      btnText.textContent = 'Start Tracking →';
+    }
+  });
+
+  // Dark mode toggle on login page
+  const themeBtn = document.getElementById('theme-toggle-login');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      document.getElementById('theme-icon-login').textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+</script>
+</body>
+</html>

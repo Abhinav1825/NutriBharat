@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Indian Food Nutrition Estimator - Track your daily nutrition with AI-powered food recognition for Indian cuisine." />
+  <title>{% block title %}Indian Food Nutrition Estimator{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍴</text></svg>" />
+</head>
+<body id="app-body">
+
+{% block nav %}
+<nav class="navbar" id="navbar">
+  <a href="/food/upload" class="nav-brand">
+    <span class="brand-icon" aria-hidden="true">🍴</span>
+    <span>NutriBharat</span>
+  </a>
+
+  <ul class="nav-links" id="nav-links">
+    <li>
+      <a href="/food/upload" id="nav-upload"
+         class="{{ 'active' if request.endpoint == 'food.upload_page' else '' }}">
+        <span class="nav-icon">📷</span> Upload
+      </a>
+    </li>
+    <li>
+      <a href="/food/search-page" id="nav-search"
+         class="{{ 'active' if request.endpoint == 'food.search_page' else '' }}">
+        <span class="nav-icon">🔍</span> Search
+      </a>
+    </li>
+    <li>
+      <a href="/logs/" id="nav-tracker"
+         class="{{ 'active' if request.endpoint == 'logs.tracker_page' else '' }}">
+        <span class="nav-icon">📋</span> Tracker
+      </a>
+    </li>
+    <li>
+      <a href="/dashboard/" id="nav-dashboard"
+         class="{{ 'active' if request.endpoint == 'dashboard.dashboard_page' else '' }}">
+        <span class="nav-icon">📊</span> Dashboard
+      </a>
+    </li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn-icon" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
+    {% if session.username %}
+    <div class="nav-user">
+      <div class="avatar" aria-hidden="true">{{ session.username[0].upper() }}</div>
+      <span class="username">{{ session.username }}</span>
+    </div>
+    <button class="btn-icon" id="btn-logout" title="Logout" aria-label="Logout">🚪</button>
+    {% endif %}
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</nav>
+{% endblock %}
+
+<main class="main-content">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" id="loading-overlay" aria-hidden="true">
+  <div style="text-align:center;">
+    <div class="spinner spinner-lg" style="margin:0 auto 16px;"></div>
+    <p style="color:white;font-weight:600;" id="loading-text">Processing...</p>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

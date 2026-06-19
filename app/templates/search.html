@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block title %}Search Foods — NutriBharat{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+  <div class="page-header">
+    <h1>🔍 Manual Food Search</h1>
+    <p>Search from 80+ common Indian foods. Select, set quantity, and log your meal.</p>
+  </div>
+
+  <div class="grid-2" style="gap:28px;align-items:start;">
+    <!-- Left: Search -->
+    <div>
+      <div class="card" style="padding:24px;">
+        <div class="form-group">
+          <label class="form-label" for="food-search-input">Search Indian Foods</label>
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              class="form-control"
+              id="food-search-input"
+              placeholder="Type: biryani, dal, paneer, dosa..."
+              autocomplete="off"
+            />
+            <div class="autocomplete-list" id="search-autocomplete"></div>
+          </div>
+        </div>
+
+        <!-- Category filter -->
+        <div class="form-group">
+          <label class="form-label">Filter by Category</label>
+          <div id="category-chips" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+        </div>
+      </div>
+
+      <!-- Search results grid -->
+      <div id="search-results" style="margin-top:16px;">
+        <div id="results-grid" class="grid-auto"></div>
+        <p id="no-results" class="hidden text-center text-muted mt-2" style="margin-top:20px;">No foods found. Try a different search.</p>
+        <p id="search-prompt" class="text-center text-muted" style="margin-top:20px;font-size:0.875rem;">Start typing to search for foods...</p>
+      </div>
+    </div>
+
+    <!-- Right: Add to Log Panel -->
+    <div>
+      <!-- Placeholder -->
+      <div id="search-placeholder" class="card" style="padding:40px;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:16px;">🥘</div>
+        <h3 style="font-size:1rem;color:var(--text-2);">Select a Food</h3>
+        <p style="font-size:0.875rem;color:var(--text-3);">Click any food card on the left to see nutrition details and add it to your meal log.</p>
+      </div>
+
+      <!-- Food detail + log panel -->
+      <div id="food-detail-panel" class="hidden">
+        <!-- Nutrition card -->
+        <div class="nutrition-summary" id="nutrition-card">
+          <div class="nutrition-summary-header">
+            <h3 id="detail-food-name">—</h3>
+            <div class="food-name" id="detail-food-category">—</div>
+          </div>
+          <div class="nutrition-grid">
+            <div class="nutrition-item">
+              <div class="nut-val" id="detail-cal">0</div>
+              <div class="nut-unit">kcal</div>
+              <div class="nut-label">Calories</div>
+            </div>
+            <div class="nutrition-item">
+              <div class="nut-val" id="detail-prot">0</div>
+              <div class="nut-unit">g</div>
+              <div class="nut-label">Protein</div>
+            </div>
+            <div class="nutrition-item">
+              <div class="nut-val" id="detail-carb">0</div>
+              <div class="nut-unit">g</div>
+              <div class="nut-label">Carbs</div>
+            </div>
+            <div class="nutrition-item">
+              <div class="nut-val" id="detail-fat">0</div>
+              <div class="nut-unit">g</div>
+              <div class="nut-label">Fat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add to log form -->
+        <div class="card mt-2" style="padding:20px;margin-top:16px;">
+          <h4 style="font-size:0.9rem;font-weight:600;margin-bottom:16px;color:var(--text);">➕ Add to Meal Log</h4>
+
+          <div class="form-group">
+            <label class="form-label">Meal Type</label>
+            <select class="form-control" id="search-meal-type">
+              <option value="Breakfast">🌅 Breakfast</option>
+              <option value="Lunch" selected>☀️ Lunch</option>
+              <option value="Dinner">🌙 Dinner</option>
+              <option value="Snacks">🍎 Snacks</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">
+              Quantity: <span id="search-qty-label" style="color:var(--accent);font-weight:700;">1 serving</span>
+            </label>
+            <div class="qty-row">
+              <input type="range" class="qty-slider" id="search-qty-slider" min="0.25" max="5" step="0.25" value="1" />
+              <input type="number" class="qty-input" id="search-qty-input" min="0.25" max="20" step="0.25" value="1" />
+            </div>
+          </div>
+
+          <!-- Live nutrition preview -->
+          <div id="search-nutrition-preview" style="margin-bottom:16px;">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;">
+              <div style="background:var(--accent-light);border-radius:var(--radius-md);padding:10px;">
+                <div style="font-weight:700;color:var(--accent);" id="pr-cal">0</div>
+                <div style="font-size:0.72rem;color:var(--text-3);">kcal</div>
+              </div>
+              <div style="background:var(--green-light);border-radius:var(--radius-md);padding:10px;">
+                <div style="font-weight:700;color:var(--green);" id="pr-prot">0g</div>
+                <div style="font-size:0.72rem;color:var(--text-3);">protein</div>
+              </div>
+              <div style="background:var(--blue-light);border-radius:var(--radius-md);padding:10px;">
+                <div style="font-weight:700;color:var(--blue);" id="pr-carb">0g</div>
+                <div style="font-size:0.72rem;color:var(--text-3);">carbs</div>
+              </div>
+              <div style="background:var(--yellow-light);border-radius:var(--radius-md);padding:10px;">
+                <div style="font-weight:700;color:var(--yellow);" id="pr-fat">0g</div>
+                <div style="font-size:0.72rem;color:var(--text-3);">fat</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-full" id="btn-search-add-log">
+            ✅ Add to Log
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}
